@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+table{
+    width: 90%;
+    margin: 1% 5%;
+    border-spacing: 0px;
+    caption-side: bottom;
+    table-layout: fixed;
+}
+
+table *{
+    border: solid black 1px;
+}
+
+table caption{
+    border: none;
+}
+
+th{
+    font-size: 27px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    text-transform: uppercase;
+    font-family: Lucida Console, Lucida Sans Typewriter, monaco, Bitstream Vera Sans Mono, monospace;
+}
+
+td{
+    vertical-align: top;
+    padding-bottom: 4%;
+}
+
+td > p{
+    border: none;
+    margin-bottom: 4%;
+}
+
+td div *{
+    border: none;
+}
+
+th:hover{
+    text-decoration: line-through;
+}
+
+th::first-letter{
+    font-size: 35px;
+}
+
+tr:nth-child(1) th, tr:nth-child(2){
+    background: rgb(75, 75, 75);
+    color: white;
+}
+
+td:is(.mesDiferente){
+    background: gray;
+    color: rgb(41, 41, 41);
+    font-weight: bold;
+}
+
+td div{
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    margin-bottom: -15%;
+    text-align: center;
+    border: none;
+}
+
+td div p:nth-child(2){
+    margin-bottom: 10%;
+}
+
+td:not(.mesDiferente):not(:only-child):hover{
+    background: rgb(255, 88, 88);
+    border: dashed red 5px;
+}
+
+tr:nth-child(1n + 3):hover td:not(.mesDiferente):not(:hover){
+    background: rgb(255, 203, 144);
+    border: solid orange;
+}
+
+:is(.social, .laboral, .personal) div :is(p, a){
+    letter-spacing: 1.2px;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.social div :is(p, a){
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.laboral div :is(p, a){
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.personal div :is(p, a){
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+}
+
+tr:last-child, tr:last-child td{
+    border: none;
+    padding: 0;
+}
+
+table:has(tr:nth-child(5) td:nth-child(3):hover) tr:last-child td{
+    padding-bottom: 4%;
+    border: solid 1px;
+}
+
+table:has(tr:nth-child(5) td:nth-child(3):hover) tr:last-child td::after{
+    content: "Inicio de curso: Bienvenidos al IES la Vereda";
+}
